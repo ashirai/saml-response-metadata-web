@@ -29,6 +29,8 @@
 </template>
 
 <script>
+  import fileSaver from 'file-saver';
+
   export default {
     name: 'home',
     data() {
@@ -56,6 +58,8 @@
       handleSubmit(name) {
         this.$refs[name].validate((valid) => {
           if (valid) {
+            const blob = new Blob(['Hello, world!'], { type: 'text/plain;charset=utf-8' });
+            fileSaver.saveAs(blob, 'hello world.txt');
             this.$Message.success('Generated SAML Service Provider file!');
           } else {
             this.$Message.error('Please make sure to fill all required fields!');
@@ -65,6 +69,9 @@
       handleReset(name) {
         this.$refs[name].resetFields();
       },
+    },
+    components: {
+      fileSaver,
     },
   };
 </script>
