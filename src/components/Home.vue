@@ -4,10 +4,10 @@
     <Card :bordered="false">
       <p slot="title">
         <Row>
-          <Col span="7">
+          <Col span="6">
           <img class="logo" src="../assets/logo.svg" alt="ProLease">
           </Col>
-          <Col span="17">
+          <Col span="18" class="title">
             SAML Service Provider Metadata Generator
           </Col>
         </Row>
@@ -103,15 +103,18 @@
     .ivu-card{
       .ivu-card-head{
         .logo{
-          height: 30px;
+          height: 23px;
         }
         p{
-          height: 30px;
+          height: 27px;
           font-size: 21px;
-          color: #555555;
+          color: #777777;
           .ivu-row{
             display: flex;
             align-items: baseline;
+            .title{
+              text-align: left;
+            }
           }
         }
       }
