@@ -22,7 +22,7 @@
           </Row>
         </FormItem>
         <FormItem label="Logout URL" prop="logoutUrl">
-          <Input v-model="formValidate.logoutUrl" placeholder="eg. http://www.mycompany.com/saml/logout.html" />
+          <Input v-model="formValidate.logoutUrl" placeholder="Optional. eg. http://www.mycompany.com/saml/logout.html" />
         </FormItem>
         <FormItem label="X509 Certificate" prop="certificate">
           <Input v-model="formValidate.certificate" type="textarea" :rows="20" />
