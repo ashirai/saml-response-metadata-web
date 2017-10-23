@@ -31,6 +31,7 @@
 <script>
   import fileSaver from 'file-saver';
   import moment from 'moment';
+  import samlTemplate from '../assets/saml.txt';
 
   export default {
     name: 'home',
@@ -59,8 +60,17 @@
       handleSubmit(name) {
         this.$refs[name].validate((valid) => {
           if (valid) {
-            const blob = new Blob(['Hello, world!'], { type: 'text/plain;charset=utf-8' });
-            fileSaver.saveAs(blob, 'hello world.txt');
+            let saml = samlTemplate.replace(/##accountDirectory##/g, this.formValidate.accountDirectory);
+            saml = saml.replace('##expirationDate##', this.formValidate.expirationDate);
+            saml = saml.replace('##certificate##', this.formValidate.certificate);
+            let logoutXml = '';
+            if (this.formValidate.logoutUrl) {
+              // added \n\t so that it will align with other tags
+              logoutXml = `\n\t<md:SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="${this.formValidate.logoutUrl}"/>`;
+            }
+            saml = saml.replace('##logoutUrl##', logoutXml);
+            const blob = new Blob([saml], { type: 'text/xml;charset=utf-8' });
+            fileSaver.saveAs(blob, 'SAML-Service-Provider-Metadata.xml');
             this.$Message.success('Generated SAML Service Provider file!');
           } else {
             this.$Message.error('Please make sure to fill all required fields!');
