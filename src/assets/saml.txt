@@ -1,0 +1,24 @@
+<md:EntityDescriptor
+  xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+  entityID="https://www.proleaseweb.com/##accountDirectory##/consume.aspx"
+  validUntil="2018-07-29T19:18:34Z"
+  cacheDuration="PT604800S">
+  <md:SPSSODescriptor
+    protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol"
+    AuthnRequestsSigned="true"
+    WantAssertionsSigned="true">
+    <md:KeyDescriptor use="signing">
+      <ds:KeyInfo xmlns:ds="http://www.w3.org/2000/09/xmldsig#">
+        <ds:X509Data>
+          <ds:X509Certificate>##certificate##</ds:X509Certificate>
+        </ds:X509Data>
+      </ds:KeyInfo>
+    </md:KeyDescriptor>##logoutUrl##
+    <md:NameIDFormat>
+      urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified
+    </md:NameIDFormat>
+    <md:AssertionConsumerService
+      Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
+      Location="https://www.proleaseweb.com/##accountDirectory##/consume.aspx" index="1"/>
+  </md:SPSSODescriptor>
+</md:EntityDescriptor>
