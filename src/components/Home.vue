@@ -2,7 +2,7 @@
   <div id="home">
 
     <Card :bordered="false">
-      <p slot="title">ProLease SAML Service Provider File Generator</p>
+      <p slot="title">ProLease SAML Service Provider Metadata Generator</p>
       <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="120">
         <FormItem label="Account Directory" prop="accountDirectory">
           <Input v-model="formValidate.accountDirectory" placeholder="eg. PL_XYZCompany" />
