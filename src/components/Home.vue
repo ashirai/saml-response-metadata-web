@@ -30,6 +30,7 @@
 
 <script>
   import fileSaver from 'file-saver';
+  import moment from 'moment';
 
   export default {
     name: 'home',
@@ -37,7 +38,7 @@
       return {
         formValidate: {
           accountDirectory: '',
-          expirationDate: '',
+          expirationDate: moment().add(5, 'years').toDate(),
           logoutUrl: '',
           certificate: '',
         },
@@ -72,6 +73,7 @@
     },
     components: {
       fileSaver,
+      moment,
     },
   };
 </script>
