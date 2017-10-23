@@ -4,10 +4,10 @@
     <Card :bordered="false">
       <p slot="title">
         <Row>
-          <Col span="6">
+          <Col span="7">
           <img class="logo" src="../assets/logo.svg" alt="ProLease">
           </Col>
-          <Col span="18" class="title">
+          <Col span="17" class="title">
             SAML Service Provider Metadata Generator
           </Col>
         </Row>
