@@ -5,15 +5,15 @@
       <p slot="title">ProLease SAML Service Provider File Generator</p>
       <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="120">
         <FormItem label="Account Directory" prop="accountDirectory">
-          <Input v-model="formValidate.accountDirectory" placeholder="PL_XYZCompany" />
+          <Input v-model="formValidate.accountDirectory" placeholder="eg. PL_XYZCompany" />
         </FormItem>
         <FormItem label="Expiration Date" prop="expirationDate">
           <Row type="flex" justify="start">
-            <DatePicker v-model="formValidate.expirationDate" type="date" placeholder="2020-12-31"></DatePicker>
+            <DatePicker v-model="formValidate.expirationDate" type="date" placeholder="eg. 2020-12-31"></DatePicker>
           </Row>
         </FormItem>
         <FormItem label="Logout URL" prop="logoutUrl">
-          <Input v-model="formValidate.logoutUrl" placeholder="http://www.mycompany.com/saml/logout.html" />
+          <Input v-model="formValidate.logoutUrl" placeholder="eg. http://www.mycompany.com/saml/logout.html" />
         </FormItem>
         <FormItem label="X509 Certificate" prop="certificate">
           <Input v-model="formValidate.certificate" type="textarea" :rows="20" />
