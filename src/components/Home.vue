@@ -2,7 +2,16 @@
   <div id="home">
 
     <Card :bordered="false">
-      <p slot="title">ProLease SAML Service Provider Metadata Generator</p>
+      <p slot="title">
+        <Row>
+          <Col span="7">
+          <img class="logo" src="../assets/logo.svg" alt="ProLease">
+          </Col>
+          <Col span="17">
+            SAML Service Provider Metadata Generator
+          </Col>
+        </Row>
+      </p>
       <Form ref="formValidate" :model="formValidate" :rules="ruleValidate" :label-width="120">
         <FormItem label="Account Directory" prop="accountDirectory">
           <Input v-model="formValidate.accountDirectory" placeholder="eg. PL_XYZCompany" />
@@ -91,6 +100,22 @@
 <style lang="scss" scoped>
   #home{
     width: 700px;
+    .ivu-card{
+      .ivu-card-head{
+        .logo{
+          height: 30px;
+        }
+        p{
+          height: 30px;
+          font-size: 21px;
+          color: #555555;
+          .ivu-row{
+            display: flex;
+            align-items: baseline;
+          }
+        }
+      }
+    }
   }
 
 </style>
