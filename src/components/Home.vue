@@ -25,7 +25,7 @@
           <Input v-model="formValidate.logoutUrl" placeholder="Optional. eg. http://www.mycompany.com/saml/logout.html" />
         </FormItem>
         <FormItem label="X509 Certificate" prop="certificate">
-          <Input v-model="formValidate.certificate" type="textarea" :rows="20" />
+          <Input v-model="formValidate.certificate" type="textarea" :rows="15" />
         </FormItem>
         <FormItem>
           <Button type="primary" @click="handleSubmit('formValidate')">Generate SAML</Button>
@@ -117,6 +117,9 @@
             }
           }
         }
+      }
+      .ivu-form{
+        padding-top: 25px;
       }
     }
   }
