@@ -5,7 +5,7 @@
       <p slot="title">
         <Row>
           <Col span="7">
-          <img class="logo" src="../assets/logo.svg" alt="ProLease">
+            <img class="logo" src="../assets/logo.svg" alt="ProLease">
           </Col>
           <Col span="17" class="title">
             SAML Service Provider Metadata Generator
@@ -70,7 +70,7 @@
         this.$refs[name].validate((valid) => {
           if (valid) {
             let saml = samlTemplate.replace(/##accountDirectory##/g, this.formValidate.accountDirectory);
-            saml = saml.replace('##expirationDate##', this.formValidate.expirationDate);
+            saml = saml.replace('##expirationDate##', moment(this.formValidate.expirationDate).format('YYYY-MM-DD'));
             saml = saml.replace('##certificate##', this.formValidate.certificate);
             let logoutXml = '';
             if (this.formValidate.logoutUrl) {

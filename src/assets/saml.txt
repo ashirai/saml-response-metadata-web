@@ -1,7 +1,7 @@
 <md:EntityDescriptor
   xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
   entityID="https://www.proleaseweb.com/##accountDirectory##/consume.aspx"
-  validUntil="2018-07-29T19:18:34Z"
+  validUntil="##expirationDate##T23:59:59Z"
   cacheDuration="PT604800S">
   <md:SPSSODescriptor
     protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol"
